@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Carendar::VERSION
   spec.authors       = ["Axel Tetzlaff"]
   spec.email         = ["axel.tetzlaff@gmx.de"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Pure CSS week calendar rendering}
+  spec.description   = %q{Provides a sass mixin and a rendering helper for simple display of calendar events.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
