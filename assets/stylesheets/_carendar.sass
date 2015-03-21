@@ -1,0 +1,41 @@
+=unstyled-carender-list 
+  padding: 0
+  margin: 0
+  list-style-type: none
+
+=carendar($day-height: 500px, $min-per-slot: 5)
+  $min-per-day: 60 * 24
+  $slots-per-day: $min-per-day / $min-per-slot
+  $slot-height: $day-height / $slots-per-day
+  +unstyled-carender-list
+  width: 100%
+  &.week
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    .day
+      width: (100.0% / 7)
+      .items
+        +unstyled-carender-list
+        height: $day-height
+        position: relative
+        &:after
+          clear: both
+
+        .item
+          position: absolute
+
+          @for $i from 0 through $slots-per-day
+            &[data-start='#{$i*$min-per-slot}']
+              top: $i * $slot-height
+            &[data-duration='#{$i*$min-per-slot}']
+              height: $i*$slot-height
+
+          left: 0
+          right: 0
+          @for $i from 0 through 10
+            &[data-offset-left='#{$i}']
+              left: $i * 10%
+            &[data-offset-right='#{$i}']
+              right: $i * 10%
+
