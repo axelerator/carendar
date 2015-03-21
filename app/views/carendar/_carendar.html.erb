@@ -1,0 +1,16 @@
+<ol class="carendar week">
+  <%- calendar.days.each do |day| %>
+    <li class="day">
+      <div class="dayName"><%= l(day.day.to_date, format: :short) %> </div>
+      <ol class="items">
+        <%- day.items.each do |i| %>
+          <%= content_tag 'li', {data: {start: i.start_min , duration: i.duration, offset_left: i.offset_left,  offset_right: i.offset_right}, class: ['item'] + Array.wrap(i.options[:class])} do %>
+
+            <div class="title"><%=i.options[:title]%></div>
+          <% end %>
+        <% end %>
+      </ol>
+    </li>
+  <% end %>
+</ol>
+

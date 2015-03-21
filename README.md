@@ -20,7 +20,13 @@ Or install it yourself as:
 
 ## Usage
 
+
+First you have to create a `Calendar` object containing all calendar items.
+
     Carendar::Calendar.new(first_day, last_day, array_of_item_hashes)
+
+This can be constructed from a simple array of hashes, where each item is represented by hash with the keys
+`starts_at`, ends_at, options`.
 
 Example:
 
@@ -41,6 +47,10 @@ Example:
        options: opts }
     end
     @calendar = Carendar::Calendar.new(DateTime.now.beginning_of_week, DateTime.now.end_of_week + 1.week, ungrouped_items)
+
+Rendering in the template is called with the `carendar`-helper, with the previously constructed calendar object.
+
+    <%= carender(@calender) %>
 
 
 ## Contributing
