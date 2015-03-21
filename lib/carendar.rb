@@ -1,6 +1,11 @@
 require "carendar/version"
 
 module Carendar
+  module Rails
+    class Engine < ::Rails::Engine
+    end
+  end
+
   CalendarItem = Struct.new(:starts_at, :ends_at, :options) do
     attr_accessor :overlapping_with_earlier, :overlapping_with_later, :offset_right, :offset_left
     def day
