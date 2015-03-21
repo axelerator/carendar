@@ -33,31 +33,31 @@ the layout.
 Custom styling is easily done by selecting the child classes of your calendar class.
 
 
-  @import 'carendar'
+    @import 'carendar'
 
-  .carendar
-    +carendar(500px, 5)
-    .day
-      border-left: 1px solid #EEE
-      border-top: 1px solid #EEE
+    .carendar
+      +carendar(500px, 5)
+      .day
+        border-left: 1px solid #EEE
+        border-top: 1px solid #EEE
 
-      > div
+        > div
+          background-color: #EEE
+          text-align: center
+          font-size: 10pt
+          color: #999
+
+      .item
+        border: 1px solid #DDD
         background-color: #EEE
-        text-align: center
-        font-size: 10pt
-        color: #999
-
-    .item
-      border: 1px solid #DDD
-      background-color: #EEE
-      font-size: 8pt
-      z-index: 5
-      &:hover
-        z-index: 10
+        font-size: 8pt
+        z-index: 5
+        &:hover
+          z-index: 10
 
 
-      &.important
-        background-color: #FEE
+        &.important
+          background-color: #FEE
 
 
 Example:
