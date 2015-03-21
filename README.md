@@ -28,6 +28,38 @@ First you have to create a `Calendar` object containing all calendar items.
 This can be constructed from a simple array of hashes, where each item is represented by hash with the keys
 `starts_at`, ends_at, options`.
 
+Styling is provided via sass mixin. You have to at least include the `carendar` mixin to get
+the layout.
+Custom styling is easily done by selecting the child classes of your calendar class.
+
+
+  @import 'carendar'
+
+  .carendar
+    +carendar(500px, 5)
+    .day
+      border-left: 1px solid #EEE
+      border-top: 1px solid #EEE
+
+      > div
+        background-color: #EEE
+        text-align: center
+        font-size: 10pt
+        color: #999
+
+    .item
+      border: 1px solid #DDD
+      background-color: #EEE
+      font-size: 8pt
+      z-index: 5
+      &:hover
+        z-index: 10
+
+
+      &.important
+        background-color: #FEE
+
+
 Example:
 
     r = Random.new
