@@ -54,7 +54,7 @@ Rendering in the template is called with the `carendar`-helper, with the previou
 
 ## Screenshot
 
-(https://raw.githubusercontent.com/axelerator/carendar/master/screenshot.jpg)
+![screenshot of sample calendar rendering](https://raw.githubusercontent.com/axelerator/carendar/master/screenshot.jpg)
 
 
 ## Contributing
