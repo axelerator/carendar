@@ -52,6 +52,10 @@ Rendering in the template is called with the `carendar`-helper, with the previou
 
     <%= carender(@calender) %>
 
+## Screenshot
+
+(https://raw.githubusercontent.com/axelerator/carendar/master/screenshot.jpg)
+
 
 ## Contributing
 
