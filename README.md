@@ -9,7 +9,7 @@ Limitations
 
 ## Demo
 
-Visit the [demo rails app](https://carendar-demo.herokuapp.com/)
+Visit the [demo rails app](https://carendar-demo.herokuapp.com/) and the [source for the demo](https://github.com/axelerator/carendar-demo)
 
 ## Installation
 
