@@ -2,6 +2,10 @@
 
 Pure CSS rendering for week calendars.
 
+## Demo
+
+Visit the [demo rails app](https://carendar-demo.herokuapp.com/)
+
 ## Installation
 
 Add this line to your application's Gemfile:
