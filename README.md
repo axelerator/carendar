@@ -2,6 +2,11 @@
 
 Pure CSS rendering for week calendars.
 
+Limitations
+
+  * For positioning days have to rastered. The example shows a 5 minute grid. The times of the events have to be rounded to the grid. The grid resolution can be passed as parameter to the sass mixin
+  * No events across day borders
+
 ## Demo
 
 Visit the [demo rails app](https://carendar-demo.herokuapp.com/)
@@ -30,17 +35,23 @@ First you have to create a `Calendar` object containing all calendar items.
     Carendar::Calendar.new(first_day, last_day, array_of_item_hashes)
 
 This can be constructed from a simple array of hashes, where each item is represented by hash with the keys
-`starts_at`, ends_at, options`.
+`starts_at, ends_at, options`.
 
 Styling is provided via sass mixin. You have to at least include the `carendar` mixin to get
 the layout.
-Custom styling is easily done by selecting the child classes of your calendar class.
 
+The mixin takes three parameters
+  
+  * Height of a day for the week view
+  * Height of a day got the month vew
+  * resolution of the minutes grid for the week view (for positioning events relative to the top)
+
+Custom styling is easily done by selecting the child classes of your calendar class.
 
     @import 'carendar'
 
-    .carendar
-      +carendar(500px, 5)
+    .my-calendar
+      +carendar(500px, 50px, 5)
       .day
         border-left: 1px solid #EEE
         border-top: 1px solid #EEE
