@@ -3,6 +3,17 @@
   margin: 0
   list-style-type: none
 
+=carendar-flexbox
+  display: -webkit-box
+  display: -moz-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  -webkit-flex-direction: row
+  -webkit-flex-wrap: wrap
+  flex-direction: row
+  flex-wrap: wrap
+
 =carendar($week-day-height: 500px, $month-day-height: 50px, $min-per-slot: 5)
   $min-per-day: 60 * 24
   $slots-per-day: $min-per-day / $min-per-slot
@@ -10,9 +21,7 @@
   +unstyled-carender-list
   width: 100%
   &.week
-    display: flex
-    flex-direction: row
-    flex-wrap: wrap
+    +carendar-flexbox
     .day
       width: (100.0% / 7.1)
       .items
@@ -39,9 +48,7 @@
             &[data-offset-right='#{$i}']
               right: $i * 10%
   &.month
-    display: flex
-    flex-direction: row
-    flex-wrap: wrap
+    +carendar-flexbox
     .day
       width: (100.0% / 7)
       .items
