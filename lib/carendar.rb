@@ -17,11 +17,11 @@ module Carendar
     end
 
     def start_min
-      starts_at.hour * 60 + starts_at.minute
+      starts_at.hour * 60 + starts_at.min
     end
 
     def end_min
-      ends_at.hour * 60 + ends_at.minute
+      ends_at.hour * 60 + ends_at.min
     end
 
     def color
@@ -41,11 +41,12 @@ module Carendar
       end
       @items.sort_by!(&:start_min)
       @items.each do |item|
-        item.overlapping_with_earlier = @items.select do |other|
-          other.start_min < item.start_min && other.end_min > item.start_min
-        end
         item.overlapping_with_later = []
         item.offset_right = 0
+        item.offset_left = 0
+        item.overlapping_with_earlier = @items.select do |other|
+          other.start_min <= item.start_min && other.end_min > item.start_min
+        end
       end
 
       @items.each do |item|

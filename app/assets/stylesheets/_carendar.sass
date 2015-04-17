@@ -22,8 +22,15 @@
   width: 100%
   &.week
     +carendar-flexbox
+    .legend
+      width: 5%
+      ol
+        +unstyled-carender-list
+        position: relative
+        li
+          text-align: right
     .day
-      width: (100.0% / 7.1)
+      width: (95.0% / 7.1)
       .items
         +unstyled-carender-list
         height: $week-day-height
@@ -31,24 +38,27 @@
         &:after
           clear: both
 
-        .item
-          position: absolute
+    .day .items .item, .legend .items .item
+      position: absolute
 
-          @for $i from 0 through $slots-per-day
-            &[data-start='#{$i*$min-per-slot}']
-              top: $i * $slot-height
-            &[data-duration='#{$i*$min-per-slot}']
-              height: $i*$slot-height
+      @for $i from 0 through $slots-per-day
+        &[data-start='#{$i*$min-per-slot}']
+          top: $i * $slot-height
+        &[data-duration='#{$i*$min-per-slot}']
+          height: $i*$slot-height
 
-          left: 0
-          right: 0
-          @for $i from 0 through 10
-            &[data-offset-left='#{$i}']
-              left: $i * 10%
-            &[data-offset-right='#{$i}']
-              right: $i * 10%
+      left: 0
+      right: 0
+      @for $i from 0 through 10
+        &[data-offset-left='#{$i}']
+          left: $i * 10%
+        &[data-offset-right='#{$i}']
+          right: $i * 10%
   &.month
     +carendar-flexbox
+
+    .legend
+      display: none
     .day
       width: (100.0% / 7)
       .items
